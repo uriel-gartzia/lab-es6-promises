@@ -7,7 +7,7 @@ const steak = [
   "cook steak for 30-60 seconds per side using a spoon to baste with butter",
   "rest for 10 minutes",
   "enjoy",
-  "Steak is ready!"
+
 ];
 
 const mashedPotatoes = [
@@ -16,6 +16,7 @@ const mashedPotatoes = [
   "pour in water",
   "mix",
   "enjoy",
+  "Mashed potatoes are ready!"
 ];
 
 const brusselsSprouts = [
