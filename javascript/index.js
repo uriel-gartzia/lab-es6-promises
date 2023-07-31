@@ -138,26 +138,61 @@ async function makeBroccoli() {
  }
 
  makeBroccoli ();
-
- 
-
- // BONUS 1
-//  const mashedPotatoesImgNode =  document.querySelector("#mashedPotatoesImg")
-
-
-async function displayImage () {
- 
-  try { 
-     const responsePotato = await getInstruction("mashedPotatoes", 5) &&  document.getElementById("mashedPotatoesImg").removeAttribute("hidden")
-// ;
-    
-//      return responsePotato =
-  } catch  (error) {
-    console.log ( error)
-}
- }
-
- displayImage ();
-
 // Bonus 2 - Promise all
 // ...
+
+Promise.all([
+  obtainInstruction("brusselsSprouts", 0),
+  obtainInstruction("brusselsSprouts", 1),
+  obtainInstruction("brusselsSprouts", 2),
+  obtainInstruction("brusselsSprouts", 3),
+  obtainInstruction("brusselsSprouts", 4),
+  obtainInstruction("brusselsSprouts", 5),
+  obtainInstruction("brusselsSprouts", 6),
+  obtainInstruction("brusselsSprouts", 7),
+])
+.then((step1, step2, step3, step4, step5) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step1}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step2}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step3}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step4}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step5}</li>`;
+  // return obtainInstruction("brusselsSprouts", 1);
+})
+// .then((step2) => {
+//   document.querySelector("#brusselsSprouts").innerHTML += `<li>${step2}</li>`;
+//   return obtainInstruction("brusselsSprouts", 2);
+// })
+// .then((step3) => {
+//   document.querySelector("#brusselsSprouts").innerHTML += `<li>${step3}</li>`;
+//   return obtainInstruction("brusselsSprouts", 3);
+// })
+// .then((step4) => {
+//   document.querySelector("#brusselsSprouts").innerHTML += `<li>${step4}</li>`;
+//   return obtainInstruction("brusselsSprouts", 4);
+// })
+// .then((step5) => {
+//   document.querySelector("#brusselsSprouts").innerHTML += `<li>${step5}</li>`;
+//   return obtainInstruction("brusselsSprouts", 5);
+// })
+// .then((step6) => {
+//   document.querySelector("#brusselsSprouts").innerHTML += `<li>${step6}</li>`;
+//   return obtainInstruction("brusselsSprouts", 6);
+// })
+// .then((step7) => {
+//   document.querySelector("#brusselsSprouts").innerHTML += `<li>${step7}</li>`;
+//   return obtainInstruction("brusselsSprouts", 7);
+// })
+// .then((step8) => {
+//   document.querySelector("#brusselsSprouts").innerHTML += `<li>${step8}</li>`;
+ 
+// })
+
+// lo hemos intentado de muchas formas y hemos conseguido que el ejercicio funcione pero sin usar
+// Promise.all y son las 22:11 y tenemos hambre
+
+
+.catch((error) => {
+  console.log(error)
+})
+
