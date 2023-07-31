@@ -138,5 +138,26 @@ async function makeBroccoli() {
  }
 
  makeBroccoli ();
+
+ 
+
+ // BONUS 1
+//  const mashedPotatoesImgNode =  document.querySelector("#mashedPotatoesImg")
+
+
+async function displayImage () {
+ 
+  try { 
+     const responsePotato = await getInstruction("mashedPotatoes", 5) &&  document.getElementById("mashedPotatoesImg").removeAttribute("hidden")
+// ;
+    
+//      return responsePotato =
+  } catch  (error) {
+    console.log ( error)
+}
+ }
+
+ displayImage ();
+
 // Bonus 2 - Promise all
 // ...
